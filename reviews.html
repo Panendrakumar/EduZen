@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews - EduZen</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to the CSS file -->
+</head>
+<body>
+    <header>
+        <button class="menu-toggle" onclick="openSidebar()">☰</button>
+        <a href="index.html" class="back-button">Back</a> <!-- Back Button -->
+    </header>
+
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar">
+        <a href="javascript:void(0)" class="close-btn" onclick="closeSidebar()">&times;</a>
+        <a href="index.html">Home</a>
+        <a href="edu-tutor.html">Edu-Tutor</a>
+        <a href="edu-z-ai.html">Edu-Z-Ai</a>
+        <a href="my-profile.html">My Profile</a>
+        <a href="z-lectures.html">Z-Lectures</a>
+        <a href="reviews.html">Reviews</a>
+    </div>
+
+    <div class="main-content">
+        <section class="reviews">
+            <h1>What Our Users Say about our venture Idea</h1>
+            <div class="review">
+                <h3>Surya</h3>
+                <p>⭐️⭐️⭐️⭐️⭐️ - EduZen transformed my learning experience! Highly recommend.</p>
+            </div>
+            <div class="review">
+                <h3>Rishwanth</h3>
+                <p>⭐️⭐️⭐️⭐️ - Great platform, very engaging and interactive.</p>
+            </div>
+            <div class="review">
+                <h3>Diya</h3>
+                <p>⭐️⭐️⭐️⭐️⭐️ - "The quality of the educational content provided by EduZen is top-notch. It’s clear that a lot of thought has gone into ensuring relevance and effectiveness."</p>
+            </div>
+            <div class="review">
+                <h3>Arjun</h3>
+                <p>⭐️⭐️⭐️⭐️⭐️ - "The platform is user-friendly and offers valuable resources that enhance my educational journey."</p>
+            </div>
+            <div class="review">
+                <h3>Aditya</h3>
+                <p>⭐️⭐️⭐️⭐️⭐️ - "If you’re struggling in your studies, EduZen is definitely worth checking out for its innovative approach!"</p>
+            </div>
+            <div class="review">
+                <h3>Isha</h3>
+                <p>⭐️⭐️⭐️⭐️⭐️ - "The reviews from other users convinced me to try EduZen, and I’m glad I did!"</p>
+            </div>
+            <!-- Add more reviews as needed -->
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 EduZen. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function openSidebar() {
+            document.getElementById("sidebar").style.width = "250px";
+            document.querySelector(".main-content").style.marginLeft = "250px";
+        }
+
+        function closeSidebar() {
+            document.getElementById("sidebar").style.width = "0";
+            document.querySelector(".main-content").style.marginLeft = "0";
+        }
+    </script>
+</body>
+</html>

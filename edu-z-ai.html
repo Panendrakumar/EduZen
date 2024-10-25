@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduZen - Edu-Z-AI</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="back-button">Back</a> <!-- Back Button -->
+        <button class="menu-toggle" onclick="openSidebar()">☰</button>
+    </header>
+
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar">
+        <a href="javascript:void(0)" class="close-btn" onclick="closeSidebar()">&times;</a>
+        <a href="index.html">Home</a>
+        <a href="edu-tutor.html">Edu-Tutor</a>
+        <a href="edu-z-ai.html">Edu-Z-Ai</a>
+        <a href="my-profile.html">My Profile</a>
+        <a href="z-lectures.html">Z-Lectures</a>
+    </div>
+
+    <div class="main-content">
+        <h1>Edu-Z-AI</h1>
+        <p>Get help from our AI-driven tutors anytime, anywhere.</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 EduZen. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function openSidebar() {
+            document.getElementById("sidebar").style.width = "250px";
+            document.querySelector(".main-content").style.marginLeft = "250px";
+        }
+
+        function closeSidebar() {
+            document.getElementById("sidebar").style.width = "0";
+            document.querySelector(".main-content").style.marginLeft = "0";
+        }
+    </script>
+</body>
+</html>

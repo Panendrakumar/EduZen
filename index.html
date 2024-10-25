@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduZen</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to the CSS file -->
+</head>
+<body>
+    <header>
+        <button class="menu-toggle" onclick="openSidebar()">☰</button>
+    </header>
+
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar">
+        <a href="javascript:void(0)" class="close-btn" onclick="closeSidebar()">&times;</a>
+        <a href="index.html">Home</a>
+        <a href="edu-tutor.html">Edu-Tutor</a>
+        <a href="edu-z-ai.html">Edu-Z-Ai</a>
+        <a href="my-profile.html">My Profile</a>
+        <a href="z-lectures.html">Z-Lectures</a>
+        <a href="reviews.html">Reviews</a>
+    </div>
+
+    <div class="main-content">
+        <section id="home" class="hero">
+            <h1>Transform Your Learning Experience using EduZen</h1>
+            <a href="#get-started" class="cta-button">Get Started</a>
+            <a href="reviews.html" class="cta-button small-button button-gap">Page Reviews</a> <!-- Size-adjusted Button -->
+        </section>
+        
+        <section id="edu-tutor" class="features">
+            <div class="feature">
+                <h3>Personalized Learning</h3>
+                <p>Customized paths that adapt to your learning style.</p>
+            </div>
+            <div class="feature">
+                <h3>AI Tutoring</h3>
+                <p>Get help from our AI-driven tutors anytime, anywhere.</p>
+            </div>
+            <div class="feature">
+                <h3>Interactive Lectures</h3>
+                <p>Engaging and interactive lectures to enhance your knowledge.</p>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 EduZen. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function openSidebar() {
+            document.getElementById("sidebar").style.width = "250px";
+            document.querySelector(".main-content").style.marginLeft = "250px";
+        }
+
+        function closeSidebar() {
+            document.getElementById("sidebar").style.width = "0";
+            document.querySelector(".main-content").style.marginLeft = "0";
+        }
+    </script>
+</body>
+</html>
