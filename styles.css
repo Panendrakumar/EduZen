@@ -18,6 +18,33 @@ header {
 }
 
 
+/* Existing styles... */
+
+html, body {
+    height: 100%; /* Set full height for the html and body */
+}
+
+.main-content {
+    margin-left: 0;
+    transition: margin-left 0.5s;
+    padding: 20px;
+    min-height: calc(100vh - 100px); /* Adjust height minus footer height */
+    box-sizing: border-box; /* Include padding in height calculation */
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 5px;
+    background: #007BFF;
+    color: white;
+    position: relative;
+    width: 100%;
+    transition: background-color 0.3s;
+    margin-top: auto; /* Ensure footer is always at the bottom */
+}
+
+/* Other existing styles... */
 
 
 
