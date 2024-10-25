@@ -17,22 +17,7 @@ header {
     z-index: 1000;
 }
 
-/* Add this to your existing styles.css */
-header h1 {
-    margin: 0;
-    font-size: 2em; /* Adjust as needed */
-    color: white; /* White color for contrast */
-    text-align: center;
-}
 
-.header-quote {
-    font-size: 1.4em;
-    color: #FFD700; /* Gold */
-    text-align: center;
-    margin-top: 0px;
-    margin-bottom: 0;
-    font-style: italic;
-}
 
 
 
