@@ -3,33 +3,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EduZen - Edu-Z-AI</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Edu-Z-AI</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to the CSS file -->
+    <style>
+        /* Chatbot Styles */
+        .chat-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 300px;
+            border: 1px solid #007BFF;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            background-color: #ffffff;
+            display: none; /* Hidden by default */
+            z-index: 1000;
+        }
+
+        .chat-header {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .chat-body {
+            height: 250px;
+            overflow-y: auto;
+            padding: 10px;
+        }
+
+        .chat-input {
+            display: flex;
+            padding: 10px;
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .chat-input button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px;
+            margin-left: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .chat-input button:hover {
+            background-color: #0056b3;
+        }
+
+        .message {
+            margin: 5px 0;
+        }
+
+        .user-message {
+            text-align: right;
+            color: #007BFF;
+        }
+
+        .ai-message {
+            text-align: left;
+            color: #333;
+        }
+    </style>
 </head>
 <body>
+    <!-- Existing Content -->
     <header>
         <a href="index.html" class="back-button">Back</a> <!-- Back Button -->
         <button class="menu-toggle" onclick="openSidebar()">☰</button>
     </header>
 
-    <!-- Sidebar -->
-    <div id="sidebar" class="sidebar">
-        <a href="javascript:void(0)" class="close-btn" onclick="closeSidebar()">&times;</a>
-        <a href="index.html">Home</a>
-        <a href="edu-tutor.html">Edu-Tutor</a>
-        <a href="my-profile.html">My Profile</a>
-        <a href="z-lectures.html">Z-Lectures</a>
-    </div>
-
     <div class="main-content">
-        <h1>Edu-Z-AI</h1>
-        <p>Get help from our AI-driven tutors anytime, anywhere.</p>
+        <h1>Welcome to Edu-Z-AI</h1>
+        <p>Chat with our AI to enhance your learning experience!</p>
+        <button onclick="toggleChat()">Chat with AI</button>
+
+        <div class="chat-container" id="chatContainer">
+            <div class="chat-header">Edu-Z AI Chatbot</div>
+            <div class="chat-body" id="chatBody"></div>
+            <div class="chat-input">
+                <input type="text" id="userInput" placeholder="Type your message...">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
     </div>
 
     <footer>
         <p>&copy; 2024 EduZen. All rights reserved.</p>
     </footer>
 
+    <script>
+        function toggleChat() {
+            const chatContainer = document.getElementById('chatContainer');
+            chatContainer.style.display = chatContainer.style.display === 'none' ? 'block' : 'none';
+        }
+
+        function sendMessage() {
+            const userInput = document.getElementById('userInput');
+            const userMessage = userInput.value;
+            if (userMessage.trim() === '') return;
+
+            displayMessage(userMessage, 'user');
+            userInput.value = '';
+
+            // Simulate AI response
+            setTimeout(() => {
+                const aiResponse = generateAIResponse(userMessage);
+                displayMessage(aiResponse, 'ai');
+            }, 1000);
+        }
+
+        function displayMessage(message, sender) {
+            const chatBody = document.getElementById('chatBody');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender}-message`;
+            messageDiv.textContent = message;
+            chatBody.appendChild(messageDiv);
+            chatBody.scrollTop = chatBody.scrollHeight; // Scroll to the bottom
+        }
+
+        function generateAIResponse(userMessage) {
+            // Simple response logic (customize this)
+            const responses = [
+                "That's interesting! Can you tell me more?",
+                "I'm here to help you with your learning journey!",
+                "What specific topic would you like to discuss?",
+                "Let's explore that together!",
+                "I can provide resources on that, just let me know!"
+            ];
+            return responses[Math.floor(Math.random() * responses.length)];
+        }
+    </script>
     <script>
         function openSidebar() {
             document.getElementById("sidebar").style.width = "250px";
